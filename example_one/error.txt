@@ -1,4 +1,24 @@
+Error 1 : 
 g++ -std=c++17 -Wall -I"$SYSTEMC_HOME/include" one.cpp -L"$SYSTEMC_HOME/lib-linux64" -lsystemc -Wl,-rpath, "$SYSTEMC_HOME/lib-linux64" -o one
 /usr/bin/x86_64-linux-gnu-ld.bfd: cannot find /opt/systemc-3.0.2/lib-linux64: file format not recognized
 collect2: error: ld returned 1 exit status
+
+Solution for error 1 : I have included space after -rpath, either the space should be removed or should be assigned directly, -rpath="$SYSTEMC_HOME/lib-linux64"
+
+Error 2 : wrote a cmake file.
+CMake Error at CMakeLists.txt:13 (find_package):
+  By not providing "FindSystemC.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "SystemC", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "SystemC" with any
+  of the following names:
+
+    SystemCConfig.cmake
+    systemc-config.cmake
+
+  Add the installation prefix of "SystemC" to CMAKE_PREFIX_PATH or set
+  "SystemC_DIR" to a directory containing one of the above files.  If
+  "SystemC" provides a separate development package or SDK, be sure it has
+  been installed.
 
