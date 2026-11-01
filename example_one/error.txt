@@ -1,0 +1,4 @@
+g++ -std=c++17 -Wall -I"$SYSTEMC_HOME/include" one.cpp -L"$SYSTEMC_HOME/lib-linux64" -lsystemc -Wl,-rpath, "$SYSTEMC_HOME/lib-linux64" -o one
+/usr/bin/x86_64-linux-gnu-ld.bfd: cannot find /opt/systemc-3.0.2/lib-linux64: file format not recognized
+collect2: error: ld returned 1 exit status
+
